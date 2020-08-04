@@ -1,0 +1,21 @@
+
+cloud:
+  aws:
+    region:
+      static: us-east-2
+      auto: false
+    credentials:
+      access-key: AKIAIQWIKD66XNL55DZQ
+      secret-key: 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
+    end-point: 
+      uri: https://sqs.us-east-2.amazonaws.com/227471887092/SpringBootSQSExample
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: SpringBootSQSExample
+          content-type: text/plain # messages by default have contentType header set to application/json
+        customOutput:
+          destination: https://sqs.us-east-2.amazonaws.com/227471887092/SpringBootSQSExample
